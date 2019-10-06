@@ -128,7 +128,9 @@ const refresh = (req, res) => {
   const authorization = (req, res, next ) => {
     let unless = [
         '/auth',
-        '/register'
+        '/register',
+        '/forgot-password',
+        '/reset-password'
     ];
  // We can obtain the session token from the requests cookies, which come with every request
 
@@ -145,9 +147,9 @@ const refresh = (req, res) => {
              }
             payload = jwt.verify(token, JWT_SECRET_KEY);
 
-            next();
+            
          }
-       
+         next();
     } catch (error) {
      // if the error thrown is because the JWT is unauthorized, return a 401 error
 
