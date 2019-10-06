@@ -19,7 +19,7 @@ var corsOptions = {
   optionsSuccessStatus: 200 
 }
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })); 
@@ -36,9 +36,11 @@ app.use(authorization);
 
 app.get('/users',user.userDocs);
 
-app.post('/deleteUser',user.deleteUser);
+app.post('/delete-user',user.deleteUser);
 
 app.post('/refresh', auth.refresh);
+app.post('/forgot-password', user.forgotPassoword);
+app.post('/reset-password', user.resetPassoword);
 
 // start server
  app.listen(port, ()=>{
