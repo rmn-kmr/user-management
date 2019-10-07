@@ -5,7 +5,7 @@ const sgMail = require('@sendgrid/mail');
 const inlineCss = require('inline-css');
 const handlebars = require('handlebars');
 const fs = require('fs'); 
-const SG_TOKEN = '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';
+const SG_TOKEN = 'PUT_SG_TOKEN_HERE';
 const forgotPasswordDir = `${__dirname}/emailTemplate/forgotPassword`;
 
 const compileOpt = {
